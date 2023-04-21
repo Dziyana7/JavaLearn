@@ -1,12 +1,8 @@
 package org.exampleSeriveImpl;
 
 import org.ServiceAPI.Service;
-import org.example.User;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Stream;
 
 public class ServiceImplementation implements Service {
@@ -15,7 +11,7 @@ public class ServiceImplementation implements Service {
     }
 
     @Override
-    public List<User> getAllUsers() {
+    public OptionalDouble getAllUsers() {
         return null;
     }
 

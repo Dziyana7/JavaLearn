@@ -1,18 +1,14 @@
 package org.ServiceAPI;
 
-import jdk.internal.access.JavaNetHttpCookieAccess;
 import org.example.BankCard;
 import org.example.Subscription;
-import org.example.User;
 
+import java.time.Duration;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.List;
 import java.util.Optional;
+import java.util.OptionalDouble;
 import java.util.stream.Collectors;
-import java.util.stream.LongStream;
 
 
 public interface Service {
@@ -23,25 +19,17 @@ public interface Service {
         return null;
     }
 
-    int[] allUsersAge = new int[]{18, 12, 34};
-    Date [] dates = {
-            getDateFromString("25/11/2009"),
-            getDateFromString("24/12/2009")
-    };
-
-    static Date getDateFromString(String dates) {
-        Date result = dates.parse( dates );
-        return result;
+    default double getAverageUsersAge() { // first get the years old for all users by difference between current date and birthday, them calculate average
+        LocalDate now = LocalDate.now();
+        OptionalDouble optAverage = getAllUsers().stream().mapToObj(user -> Duration.between(now, user.getBirthday()).get(ChronoUnit.YEARS)).average();
+        if (optAverage.isPresent()) {
+            return optAverage.getAsDouble();
+        } else {
+            return 0;
+        }
     }
 
-    public default LongStream getAverageUsersAge(int[] allUsersAge){
-        LocalDate today = LocalDate.now();
-        final ChronoUnit DAYS;
-        LongStream longStreamAverage = Arrays.stream(allUsersAge).average().stream().mapToLong(num -> (long) num);
-        return longStreamAverage;
-
-    }
-    List<User> getAllUsers();
+    OptionalDouble getAllUsers();
 
     public static boolean isPayableUser(int userAge){
         if (userAge > 18) {
@@ -50,6 +38,5 @@ public interface Service {
             return true;
         }
     }
-
-    Collectors.toUnmodifiableList();
+    
 }
