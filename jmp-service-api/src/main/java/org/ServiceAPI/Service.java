@@ -20,6 +20,8 @@ public interface Service {
         return null;
     }
 
+    List<User> getAllUsers();
+
     default double getAverageUsersAge() { // first get the years old for all users by difference between current date and birthday, them calculate average
         LocalDate now = LocalDate.now();
         OptionalDouble optAverage = getAllUsers().stream()
@@ -40,5 +42,5 @@ public interface Service {
         }
     }
 
-    List<User> getAllUsers();
+
 }
