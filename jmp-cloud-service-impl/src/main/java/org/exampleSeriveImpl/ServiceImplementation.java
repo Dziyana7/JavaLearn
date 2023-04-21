@@ -1,6 +1,7 @@
 package org.exampleSeriveImpl;
 
 import org.ServiceAPI.Service;
+import org.example.User;
 
 import java.util.*;
 import java.util.stream.Stream;
@@ -11,11 +12,11 @@ public class ServiceImplementation implements Service {
     }
 
     @Override
-    public OptionalDouble getAllUsers() {
+    public List<User> getAllUsers() {
         return null;
     }
 
-    private Optional<Object> nameUser;
+    public Optional<Object> nameUser;
 
     String[] userNames = {"name1", "name2"};
     List<String> nameList = new ArrayList<>(List.of(userNames));
