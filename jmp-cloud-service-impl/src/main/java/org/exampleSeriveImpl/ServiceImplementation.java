@@ -11,7 +11,6 @@ public class ServiceImplementation implements Service {
         this.nameUser = nameUser;
     }
 
-    @Override
     public List<User> getAllUsers() {
         return null;
     }

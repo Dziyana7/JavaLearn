@@ -22,7 +22,7 @@ public class User {
         return surname;
     }
 
-    public LocalDate getBirthday(LocalDate birthday){
+    public LocalDate getBirthday(){
         return birthday;
     }
 
