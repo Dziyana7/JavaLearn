@@ -7,9 +7,12 @@ import org.example.User;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.OptionalDouble;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 
 public interface Service {
@@ -34,6 +37,15 @@ public interface Service {
         }
     }
 
+    List<Integer> result = Arrays.asList(1, 2, 3, 4)
+            .stream()
+            .collect(Collectors.toUnmodifiableList());
+
+    static OptionalDouble user() {
+        return null;
+    }
+
+
     public static boolean isPayableUser(int userAge){
         if (userAge > 18) {
             return false;
@@ -42,5 +54,8 @@ public interface Service {
         }
     }
 
+    default List<Subscription> getAllSubscriptionsByCondition(Predicate<Subscription>) {
+        return null;
+    }
 
 }

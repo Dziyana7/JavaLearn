@@ -1,6 +1,7 @@
 package org.exampleSeriveImpl;
 
 import org.ServiceAPI.Service;
+import org.example.Subscription;
 import org.example.User;
 
 import java.util.List;
@@ -15,6 +16,15 @@ public class ServiceImplementation implements Service {
 
 
     public List<User> getAllUsers() {
+        return null;
+    }
+
+    @Override
+    public List<Subscription> getAllSubscriptionsByCondition() {
+        return null;
+    }
+
+    public List<User> getUserNames(){
         return null;
     }
 }
