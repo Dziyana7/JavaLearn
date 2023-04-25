@@ -1,6 +1,6 @@
 package org.example;
 
 public enum BankCardType {
-    CREDIT
+    CREDIT,
     DEBIT
 }
