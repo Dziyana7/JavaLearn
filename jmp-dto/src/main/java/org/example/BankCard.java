@@ -1,15 +1,19 @@
 package org.example;
 
 public class BankCard {
-    String number;
-    User user;
+    private final String number;
+    private final User user;
+
+    public BankCard(String number, User user) {
+        this.number = number;
+        this.user = user;
+    }
+
+    public String getNumber() {
+        return number;
+    }
 
     public User getUser() {
         return user;
     }
-
-    public String getNumber(){
-        return number;
-    }
 }
-

@@ -1,4 +1,4 @@
-package org.ServiceAPI;
+package org.service.api;
 
 import org.example.BankCard;
 import org.example.Subscription;
@@ -8,14 +8,13 @@ import java.time.Duration;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
-import java.util.Optional;
 import java.util.OptionalDouble;
 import java.util.function.Predicate;
 
 
 public interface Service {
     void subscribe(BankCard name);
-    Optional<Subscription> getSubscriptionByBankCardNumber(String name);
+    Subscription getSubscriptionByBankCardNumber(String name);
 
     List<User> getAllUsers();
 

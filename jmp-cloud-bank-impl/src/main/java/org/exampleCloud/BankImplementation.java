@@ -4,18 +4,14 @@ import org.example.*;
 import org.service.Bank;
 
 import java.util.UUID;
-import java.util.function.BiFunction;
 
 public class BankImplementation implements Bank {
     @Override
     public BankCard createBankCard(User user, BankCardType bankCardType) {
-        UUID uuid = UUID.randomUUID();
-        String uuidAsString = uuid.toString();
-        BiFunction<String, User, BankCard> debitCons = DebitBankCard::new;
-        BiFunction<String, User, BankCard> creditCons = CreditBankCard::new;
+        String uuid = UUID.randomUUID().toString();
         return switch (bankCardType){
-            case DEBIT -> debitCons.apply(uuidAsString, user);
-            case CREDIT -> creditCons.apply(uuidAsString, user);
+            case DEBIT -> new DebitBankCard(uuid, user);
+            case CREDIT -> new CreditBankCard(uuid, user);
         };
     }
 

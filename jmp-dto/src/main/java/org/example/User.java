@@ -2,23 +2,27 @@ package org.example;
 
 import java.time.LocalDate;
 
-public class User {
+public final class User {
 
-        static String name;
-        String surname;
-        LocalDate birthday;
+    private final String name;
+    private final String surname;
+    private final LocalDate birthday;
 
-    public User(String name, String surname, LocalDate birthday){
+    public User(String name, String surname, LocalDate birthday) {
         this.name = name;
         this.surname = surname;
         this.birthday = birthday;
     }
 
-    public String getSurname(){
+    public String getName() {
+        return name;
+    }
+
+    public String getSurname() {
         return surname;
     }
 
-    public LocalDate getBirthday(){
+    public LocalDate getBirthday() {
         return birthday;
     }
 

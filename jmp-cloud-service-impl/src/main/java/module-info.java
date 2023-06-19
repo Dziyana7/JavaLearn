@@ -1,4 +1,4 @@
-import org.ServiceAPI.Service;
+import org.service.api.Service;
 
 module jmp.cloud.service.impl {
     requires jmp.dto;

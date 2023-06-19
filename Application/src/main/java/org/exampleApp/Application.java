@@ -1,6 +1,6 @@
 package org.exampleApp;
 
-import org.ServiceAPI.Service;
+import org.service.api.Service;
 import org.example.BankCard;
 import org.example.BankCardType;
 import org.example.User;

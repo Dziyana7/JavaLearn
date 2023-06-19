@@ -1,14 +1,13 @@
 package org.exampleSeriveImpl;
 
-import org.ServiceAPI.Service;
 import org.example.BankCard;
 import org.example.Subscription;
 import org.example.User;
+import org.service.api.Service;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -23,11 +22,12 @@ public class ServiceImplementation implements Service {
     }
 
     @Override
-    public Optional<Subscription> getSubscriptionByBankCardNumber(String name) {
+    public Subscription getSubscriptionByBankCardNumber(String name) {
         return subscriptions.stream().filter(subscription -> subscription.getBankcard()
-                        .getNumber()
-                        .equals(name))
-                .findAny();
+                .getNumber()
+                .equals(name))
+                .findAny()
+                .orElseThrow();
     }
 
     public List<User> getAllUsers() {
@@ -37,7 +37,7 @@ public class ServiceImplementation implements Service {
 
     @Override
     public List<Subscription> getAllSubscriptionsByCondition(Predicate<Subscription> subs) {
-        return subscriptions.stream().filter(subscription -> subs.test(subscription)).toList();
+        return subscriptions.stream().filter(subs).toList();
     }
 
 
