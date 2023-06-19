@@ -1,4 +1,4 @@
-package org.exampleCloud;
+package org.example.cloud;
 
 import org.example.*;
 import org.service.Bank;

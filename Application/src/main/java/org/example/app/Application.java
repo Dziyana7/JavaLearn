@@ -1,11 +1,11 @@
-package org.exampleApp;
+package org.example.app;
 
 import org.service.api.Service;
 import org.example.BankCard;
 import org.example.BankCardType;
 import org.example.User;
-import org.exampleCloud.BankImplementation;
-import org.exampleSeriveImpl.ServiceImplementation;
+import org.example.cloud.BankImplementation;
+import org.example.serive.impl.ServiceImplementation;
 import org.service.Bank;
 
 import java.time.LocalDate;

@@ -1,4 +1,4 @@
-package org.exampleSeriveImpl;
+package org.example.serive.impl;
 
 import org.example.BankCard;
 import org.example.Subscription;

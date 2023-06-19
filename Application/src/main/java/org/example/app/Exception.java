@@ -1,4 +1,4 @@
-package org.exampleApp;
+package org.example.app;
 
 import java.util.Optional;
 
